@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LiveCodeBlock from "./LiveCodeBlock";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,29 @@ const highlights = [
   { label: "Focus",      value: "Full-Stack Development",    sub: "Next.js · TypeScript · Supabase" },
   { label: "Design",     value: "Graphic & Apparel",         sub: "Sublimation Layouts" },
   { label: "Networking", value: "Cisco Certified",           sub: "System Architecture" },
+];
+
+const milestones = [
+  {
+    year: "Sep 2024",
+    title: "Built Sy-Stem Surveillance",
+    sub: "Real-time university IoT project",
+  },
+  {
+    year: "Jul 2024",
+    title: "First pitch specialist at Septentrio Fair",
+    sub: "Represented the IT department",
+  },
+  {
+    year: "Sep 2024 — Present",
+    title: "Graduate Systems Intern at ZV Assistant",
+    sub: "Full-stack systems & UX role",
+  },
+  {
+    year: "Sep 2024 — Present",
+    title: "BS Information Technology",
+    sub: "Father Saturnino Urios University",
+  },
 ];
 
 export default function CV() {
@@ -36,6 +60,15 @@ export default function CV() {
       gsap.from(".cv-highlight", {
         autoAlpha: 0, y: 32, duration: 0.8, stagger: 0.1, ease: "power3.out",
         scrollTrigger: { trigger: ".cv-highlight", start: "top 88%" },
+      });
+      gsap.from(".cv-milestone", {
+        autoAlpha: 0, x: -16, duration: 0.7, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: ".cv-milestone", start: "top 88%" },
+      });
+      gsap.from(".cv-timeline-line", {
+        scaleY: 0, duration: 0.9, ease: "power3.out",
+        transformOrigin: "top center",
+        scrollTrigger: { trigger: ".cv-milestone", start: "top 88%" },
       });
       gsap.from(".cv-preview-wrap", {
         autoAlpha: 0, y: 48, duration: 1, ease: "power3.out",
@@ -107,46 +140,79 @@ export default function CV() {
           />
         </div>
 
-        {/* Sidebar CTA */}
-        <div className="flex flex-col justify-between gap-10 lg:w-72">
-          <div>
-            <h3 className="font-display text-2xl tracking-tightest md:text-3xl">Ready to collaborate?</h3>
-            <p className="mt-4 text-sm leading-relaxed text-fg-muted">
-              My CV covers full-stack development projects, graphic design work, and networking coursework.
-              Feel free to download a copy or reach out directly.
-            </p>
-          </div>
+        {/* Right: sidebar + live code block */}
+        <div className="flex flex-1 flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
 
-          <div className="flex flex-col gap-3">
-            <a
-              href={CV_PATH}
-              download="Sai_Mendoza_CV.pdf"
-              className="group flex items-center justify-between border hairline px-6 py-4 transition-colors duration-300 hover:bg-fg hover:text-bg"
-            >
-              <span className="text-xs uppercase tracking-widest2">Download CV</span>
-              <svg
-                className="transition-transform duration-300 group-hover:translate-x-1"
-                width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+          {/* Sidebar CTA */}
+          <div className="flex flex-col justify-between gap-10 lg:w-72 shrink-0">
+            <div>
+              <h3 className="font-display text-2xl tracking-tightest md:text-3xl">Ready to collaborate?</h3>
+              <p className="mt-4 text-sm leading-relaxed text-fg-muted">
+                My CV covers full-stack development projects, graphic design work, and networking coursework.
+                Feel free to download a copy or reach out directly.
+              </p>
+            </div>
+
+            {/* Mini Timeline */}
+            <div className="relative pl-5">
+              <div
+                className="cv-timeline-line pointer-events-none absolute left-0 top-1 h-full w-px origin-top bg-fg/20"
+              />
+              <div className="flex flex-col gap-6">
+                {milestones.map((m, i) => (
+                  <div key={i} className="cv-milestone relative">
+                    <span
+                      className="absolute -left-[1.31rem] top-[0.35rem] h-2 w-2 rounded-full border border-fg/40 bg-paper dark:bg-charcoal"
+                    />
+                    <span className="block text-[10px] uppercase tracking-widest2 text-fg-faint">
+                      {m.year}
+                    </span>
+                    <span className="mt-0.5 block text-sm font-medium leading-snug">
+                      {m.title}
+                    </span>
+                    <span className="block text-xs text-fg-muted">{m.sub}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href={CV_PATH}
+                download="Sai_Mendoza_CV.pdf"
+                className="group flex items-center justify-between border hairline px-6 py-4 transition-colors duration-300 hover:bg-fg hover:text-bg"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-            </a>
+                <span className="text-xs uppercase tracking-widest2">Download CV</span>
+                <svg
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
 
-            <a
-              href="#contact"
-              className="group flex items-center justify-between border hairline px-6 py-4 transition-colors duration-300 hover:bg-fg hover:text-bg"
-            >
-              <span className="text-xs uppercase tracking-widest2">Get in Touch</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">&#8599;</span>
-            </a>
+              <a
+                href="#contact"
+                className="group flex items-center justify-between border hairline px-6 py-4 transition-colors duration-300 hover:bg-fg hover:text-bg"
+              >
+                <span className="text-xs uppercase tracking-widest2">Get in Touch</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">&#8599;</span>
+              </a>
+            </div>
+
+            <div className="border-t hairline pt-6">
+              <span className="text-[10px] uppercase tracking-widest2 text-fg-faint">Last updated &#183; 2026</span>
+            </div>
           </div>
 
-          <div className="border-t hairline pt-6">
-            <span className="text-[10px] uppercase tracking-widest2 text-fg-faint">Last updated &#183; 2026</span>
+          {/* Live code block — fills remaining right space */}
+          <div className="hidden lg:flex flex-1 items-center justify-center">
+            <LiveCodeBlock />
           </div>
+
         </div>
       </div>
     </section>

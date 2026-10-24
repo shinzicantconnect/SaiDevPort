@@ -161,7 +161,6 @@ export default function Hero() {
           ref={avatarRef}
           className="relative hidden lg:flex lg:w-[30vw] lg:max-w-[420px] shrink-0 items-center justify-center"
         >
-          {/* subtle glow behind the avatar */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 rounded-full bg-ink/5 blur-3xl scale-90"
