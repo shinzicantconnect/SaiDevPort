@@ -43,6 +43,12 @@ const team: TeamMember[] = [
         name: "Stevengel",
         role: "Full Stack Developer",
         github: "https://github.com/stevengelvillanuevamonet-collab",
+    },
+    {
+        id: "elka",
+        name: "kael",
+        role: "Web Developer",
+        github: "https://github.com/litfrapps",
     }
 ];
 
