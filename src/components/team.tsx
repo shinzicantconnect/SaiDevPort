@@ -104,7 +104,7 @@ export default function Team() {
                 <div className="flex flex-col items-start justify-between gap-6 border-b hairline pb-10 md:flex-row md:items-end">
                     <div>
                         <span className="team-label inline-block text-xs uppercase tracking-widest text-fg-faint">
-                            04 — The Team
+                            04 — The ALT+F4
                         </span>
                         <div className="overflow-hidden mt-6">
                             <h2
@@ -117,7 +117,7 @@ export default function Team() {
                     </div>
                     <p className="team-desc max-w-sm text-sm text-fg-muted">
                         Friends and collaborators who bring their own craft to the table —
-                        each one a builder in their own right.
+                        each one a builder in their own right, Meet the <span className="font-bold">ALT+F4</span>
                     </p>
                 </div>
 
