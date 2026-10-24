@@ -9,7 +9,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HEADLINE_LINES = [["Full-Stack", "Developer"], ["&", "Creative", "Nerd."]];
+const HEADLINE_LINES = [["Web", "Developer"], ["&", "Creative", "Nerd."]];
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
