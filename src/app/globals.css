@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ──────────────────────────────────────────── */
+:root {
+  --font-display: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Light mode */
+  --bg: #ffffff;
+  --fg: #000000;
+  --fg-muted: rgba(0, 0, 0, 0.56);
+  --fg-faint: rgba(0, 0, 0, 0.32);
+  --border: rgba(0, 0, 0, 0.12);
+  --card: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark mode — all tokens flip, components inherit automatically */
+.dark {
+  --bg: #0a0a0a;
+  --fg: #f0ede8;
+  --fg-muted: rgba(240, 237, 232, 0.55);
+  --fg-faint: rgba(240, 237, 232, 0.28);
+  --border: rgba(240, 237, 232, 0.1);
+  --card: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fg-faint);
+  border-radius: 999px;
+}
+
+/* ─── Film-grain overlay ─────────────────────────────────────── */
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay; /* 'overlay' works on both light & dark */
+}
+
+
+
+/* ─── Utilities ──────────────────────────────────────────────── */
+.hairline {
+  border-color: var(--border);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Hero headline mask for stagger reveal */
+.reveal-line {
+  overflow: hidden;
+}
+
+.reveal-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* GSAP clip-path reveal — headings need will-change for GPU compositing */
+.about-heading,
+.works-heading,
+.links-heading,
+.footer-heading {
+  will-change: clip-path, transform;
+}
+
+/* Underline hover sweep */
+.link-sweep {
+  position: relative;
+  display: inline-block;
+}
+.link-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.link-sweep:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.noise-text {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Typewriter caret blink ─────────────────────────────────── */
+@keyframes caret-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.typewriter-caret {
+  animation: caret-blink 0.9s step-start infinite;
+}
+
+/* Marker-style highlight strip behind the typed word */
+.typewriter-highlight {
+  position: absolute;
+  inset: 0 -4px;          /* slight horizontal bleed like a real marker */
+  top: auto;
+  bottom: -1px;
+  height: 115%;
+  z-index: 0;
+  background: #f5c842;    /* warm marker yellow */
+  opacity: 0.55;
+  border-radius: 2px;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.dark .typewriter-highlight {
+  background: #e8a800;
+  opacity: 0.38;
+}
+
+/* ─── Dark-mode Tailwind colour overrides ────────────────────── */
+/*
+  The CSS variable tokens above cover ~95% of the site.
+  The few remaining Tailwind colour utilities that use literal
+  palette values (ink / paper) are handled here so the
+  transition is smooth and consistent.
+*/
+.dark .bg-mist {
+  background-color: #1a1a1a;
+}
