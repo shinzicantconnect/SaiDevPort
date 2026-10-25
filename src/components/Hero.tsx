@@ -166,7 +166,7 @@ export default function Hero() {
             className="pointer-events-none absolute inset-0 rounded-full bg-ink/5 blur-3xl scale-90"
           />
           <Image
-            src="/hero-avatar.jpg"
+            src="/me.jpg"
             alt="Pixel art avatar — Sai Mendoza"
             width={420}
             height={420}
