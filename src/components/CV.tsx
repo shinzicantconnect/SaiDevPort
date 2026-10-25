@@ -7,14 +7,14 @@ import LiveCodeBlock from "./LiveCodeBlock";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CV_PATH     = "/cv.pdf";
+const CV_PATH = "/cv.pdf";
 const CV_PNG_PATH = "/SAI FAKE CV.png";
 
 const highlights = [
-  { label: "Education",  value: "BS Information Technology", sub: "University Student" },
-  { label: "Focus",      value: "Full-Stack Development",    sub: "Next.js · TypeScript · Supabase" },
-  { label: "Design",     value: "Graphic & Apparel",         sub: "Sublimation Layouts" },
-  { label: "Networking", value: "Cisco Certified",           sub: "System Architecture" },
+  { label: "Education", value: "BS Information Technology", sub: "University Student" },
+  { label: "Focus", value: "Full-Stack Development", sub: "Next.js · TypeScript · Supabase" },
+  { label: "Design", value: "Graphic & Apparel", sub: "Sublimation Layouts" },
+  { label: "Networking", value: "Cisco Certified", sub: "System Architecture" },
 ];
 
 const milestones = [
@@ -24,14 +24,14 @@ const milestones = [
     sub: "Real-time university IoT project",
   },
   {
-    year: "Jul 2024",
-    title: "First pitch specialist at Septentrio Fair",
-    sub: "Represented the IT department",
+    year: "Jul 2025",
+    title: "Won a incubate team competition at DOST",
+    sub: "Represented as UI/UX Designer",
   },
   {
-    year: "Sep 2024 — Present",
-    title: "Graduate Systems Intern at ZV Assistant",
-    sub: "Full-stack systems & UX role",
+    year: "August 2026",
+    title: "Took a contribution with the Team creating a attendance system.",
+    sub: "Junior Secondary Developer Role",
   },
   {
     year: "Sep 2024 — Present",
@@ -123,9 +123,9 @@ export default function CV() {
               className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest2 link-sweep"
             >
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
               Download
             </a>
@@ -188,9 +188,9 @@ export default function CV() {
                   width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                 >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
               </a>
 
