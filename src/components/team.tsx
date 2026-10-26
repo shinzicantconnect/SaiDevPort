@@ -41,8 +41,8 @@ const team: TeamMember[] = [
     {
         id: "steb",
         name: "Stevengel",
-        role: "Full Stack Developer",
-        github: "https://github.com/stevengelvillanuevamonet-collab",
+        role: "Senior Developer",
+        github: "https://github.com/Stebvm",
     },
     {
         id: "elka",
