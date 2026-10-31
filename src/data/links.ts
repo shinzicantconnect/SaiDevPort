@@ -20,6 +20,15 @@ export const socialLinks: SocialLink[] = [
     handle: "@saimndza",
     url: "https://www.instagram.com/saimndza?rpxt=cG0zejVlNzBnbG5z",
   },
+
+  {
+    id: "linkedIn",
+    label: "LinkedIn",
+    handle: "@Ed Simon Mendoza",
+    url: "https://www.linkedin.com/in/ed-simon-mendoza-0a0aa4316/"
+  },
+
+
 ];
 
 export const skillGroups: SkillGroup[] = [
