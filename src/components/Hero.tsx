@@ -159,7 +159,7 @@ export default function Hero() {
         {/* right: pixel avatar */}
         <div
           ref={avatarRef}
-          className="relative hidden lg:flex lg:w-[30vw] lg:max-w-[420px] shrink-0 items-center justify-center"
+          className="relative hidden lg:flex lg:w-[38vw] lg:max-w-[520px] shrink-0 items-center justify-center"
         >
           <div
             aria-hidden
@@ -168,8 +168,8 @@ export default function Hero() {
           <Image
             src="/Sai.jpg"
             alt="Pixel art avatar — Sai Mendoza"
-            width={420}
-            height={420}
+            width={520}
+            height={520}
             priority
             className="relative w-full select-none"
             style={{ imageRendering: "pixelated" }}
