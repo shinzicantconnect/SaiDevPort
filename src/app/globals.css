@@ -72,8 +72,6 @@ body {
   mix-blend-mode: overlay; /* 'overlay' works on both light & dark */
 }
 
-
-
 /* ─── Utilities ──────────────────────────────────────────────── */
 .hairline {
   border-color: var(--border);
@@ -167,3 +165,4 @@ body {
 .dark .bg-mist {
   background-color: #1a1a1a;
 }
+

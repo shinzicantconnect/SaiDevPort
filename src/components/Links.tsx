@@ -97,9 +97,8 @@ export default function Links() {
             </>
           );
 
-          const sharedClass = `links-row group flex items-center justify-between py-8 ${
-            active ? "cursor-pointer" : "cursor-default opacity-50"
-          }`;
+          const sharedClass = `links-row group flex items-center justify-between py-8 ${active ? "cursor-pointer" : "cursor-default opacity-50"
+            }`;
 
           if (active) {
             return (

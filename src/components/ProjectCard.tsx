@@ -112,17 +112,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="mt-6 flex gap-6 border-t hairline pt-5 text-xs uppercase tracking-widest2">
         {project.liveUrl ? (
           <a href={project.liveUrl} data-magnetic className="link-sweep" target="_blank" rel="noreferrer">
-            Live Demo
+            Visit Site
           </a>
         ) : (
-          <span className="text-fg-faint">Live Demo — Soon</span>
+          <span className="text-fg-faint"></span>
         )}
         {project.repoUrl ? (
           <a href={project.repoUrl} data-magnetic className="link-sweep" target="_blank" rel="noreferrer">
             Repository
           </a>
         ) : (
-          <span className="text-fg-faint">Repository — Soon</span>
+          <span className="text-fg-faint"></span>
         )}
       </div>
     </div>

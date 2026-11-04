@@ -117,7 +117,7 @@ export default function Team() {
                     </div>
                     <p className="team-desc max-w-sm text-sm text-fg-muted">
                         Friends and collaborators who bring their own craft to the table —
-                        each one a builder in their own right, Meet the <span className="font-bold">ALT+F4</span>
+                        each one a builder in their own right, Meet the <span className="font-bold">ALT+F4 Team</span>
                     </p>
                 </div>
 

@@ -11,10 +11,10 @@ const CV_PATH = "/cv.pdf";
 const CV_PNG_PATH = "/SAI FAKE CV.png";
 
 const highlights = [
-  { label: "Education", value: "BS Information Technology", sub: "University Student" },
-  { label: "Focus", value: "Full-Stack Development", sub: "Next.js · TypeScript · Supabase" },
-  { label: "Design", value: "Graphic & Apparel", sub: "Sublimation Layouts" },
-  { label: "Networking", value: "Cisco Certified", sub: "System Architecture" },
+  { label: "Education", value: "BS Information Technology", sub: "Father Saturnino Urios University, Butuan City (Currently 3rd Year)." },
+  { label: "Focus", value: "Junior Web Developer", sub: "Next.js · TypeScript · Supabase" },
+  { label: "Design", value: "Graphic & Apparel", sub: "Sublimation Layouts using Adobe Photoshop and Illustrator." },
+  { label: "Servant", value: "Member of Social Communications Ministry", sub: "Saint Joseph Cathedral, Butuan City" },
 ];
 
 const milestones = [
